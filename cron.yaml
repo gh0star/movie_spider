@@ -1,0 +1,10 @@
+cron:
+- description: fetch_job
+  url: /fetch
+  schedule: every 30 minutes
+  timezone: Asia/Shanghai
+
+- description: mail_job
+  url: /mail
+  schedule: every day 09:20
+  timezone: Asia/Shanghai

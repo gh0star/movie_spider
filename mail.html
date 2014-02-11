@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+</head>
+    <style type='text/css'>
+    body{font-size: 12px;}
+        #movie{margin: 0 auto;width: 800px;}
+        #movie_title{margin: 20 auto;width: 600px;font-size: 22px;}
+        .movie_box{margin: 0 auto;width: 790px;margin-top: 40px;}
+        #infotb{font-size: 12px;}
+        .alignleft{float: left;width: 120px;height: 168px;margin-right: 20px; }
+        .info{margin-top: 40px;}
+        #footer{margin: 60 auto; width: 800px;}
+    </style>
+<body>
+    <div id='movie_title'>
+        <h1>Lxstar's Movie Spider</h1>
+    </div>
+    <div id='movie'>
+        {% for movie in movies %}
+            <div class='movie_box'>
+                <div class='title'>
+                    <h3>
+                        <a target='_blank' href='{{ movie.href }}'>{{ movie.name }}</a>
+                    </h3>
+                </div>
+                <div class='content'>
+                    <span>{{ movie.content|safe }}</span>
+                </div>
+                <div class='info'>{{ movie.info|safe }}</div>
+            </div>
+        {% endfor %}
+    </div>
+    <div id="footer">
+        <h1>Power By <span style="color:blue;">GAE,Webapp2,jinja2,ndb,python,yaml</span></h1>
+        <h2>如不能正常显示图片，请点击信任此联系人~</h2>
+    </div>
+</body>
+</html>
